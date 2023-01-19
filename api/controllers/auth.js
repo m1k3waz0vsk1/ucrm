@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken"
 export const register = (req, res)=>{
 
     const q = "SELECT * FROM users WHERE Email = ? OR Name = ?"
-
+    
     db.query(q, [req.body.email, req.body.name], (err, data) => {
         if (err) return res.json(err);
         if (data.length) return res.status(409).json("Користувач вже існує!");
@@ -55,8 +55,6 @@ export const login = (req, res)=>{
 }
 
 export const logout = (req, res)=>{
-
-    console.log("click click");
     res.clearCookie("access_token", {
         sameSite:"none",
         secure:true
