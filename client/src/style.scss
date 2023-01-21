@@ -23,8 +23,15 @@ $iqblue: #3eadff;
             font-weight: 400;
         }
         .link{
+            color: white;
+            font-weight: 600;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 120px;
+            background-color: #3eadff;
+            border-radius: 10px;
             text-decoration: none;
-            color: inherit;
+            text-align: center;
         }
         span{
             cursor: pointer;
