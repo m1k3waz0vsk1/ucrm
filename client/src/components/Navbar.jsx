@@ -11,13 +11,13 @@ export const Navbar = () => {
     <div class="navbar">
       <div className='container'>
         <div className='logo'>
-          <h2>IQ Composite LLC</h2>
+          <h2><Link to="/">IQ Composite LLC</Link></h2>
         </div>
         <div className='links'>
             <Link className='link' to="/clients">
               <h6>КЛІЄНТИ</h6>
             </Link>
-            <Link className='link' to="/wh">
+            <Link className='link' to="/products">
               <h6>СКЛАД</h6>
             </Link>
             <Link className='link' to="/factory">

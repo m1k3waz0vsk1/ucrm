@@ -9,6 +9,8 @@ import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Clients from "./pages/Clients";
+import Products from "./pages/Products";
+import Factory from "./pages/Factory";
 
 const Layout = () => {
   return (
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
       {
         path: "/clients",
         element: <Clients/>
+      },
+      {
+        path: "/products",
+        element: <Products/>
+      },
+      {
+        path: "/factory",
+        element: <Factory/>
       },
     ]
   },
