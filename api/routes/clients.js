@@ -12,9 +12,9 @@ const router = express.Router();
 
 router.get("/", getClients);
 router.get("/:id", getClient);
-router.post("/", postClient)
-router.delete("/:id", deleteClient)
-router.put("/:id", updateClient)
+router.post("/", postClient);
+router.delete("/:id", deleteClient);
+router.put("/:id", updateClient);
 
-export default router
+export default router;
 

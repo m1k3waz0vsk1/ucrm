@@ -27,7 +27,7 @@ export const Login = () => {
         e.preventDefault();
         try {
             await login(inputs);
-            const res = await axios.post("/auth/login", inputs);
+            await axios.post("/auth/login", inputs);
             navigate("/");
         } catch (err) {
             setError(err.response.data);
@@ -49,4 +49,4 @@ export const Login = () => {
     )
 }
 
-export default Login
+export default Login;

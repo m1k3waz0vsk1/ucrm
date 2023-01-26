@@ -1,30 +1,40 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from "react-router-dom"
 import axios from "axios"
+import DataTable from 'react-data-table-component'
+
 
 export const Clients = () => {
     const [clients, setClients] = useState([]);
 
-    const location = useLocation();
-
-    console.log(location);
-
-    useEffect(()=>{
-        const fetchData = async ()=>{
-            try {
-                const res = await axios.get("/clients");
-                setClients(res.data);
-            } catch(err) {
-                console.log(err);
-            }
+    const fetchData = async ()=>{
+        try {
+            const response = await axios.get("/clients");
+            setClients(response.data);
+        } catch(e) {
+            console.error(e);
         }
+    };
+    
+    useEffect(()=>{
         fetchData();
-    }, [clients]);
+    }, [setClients]);
 
     return (
-        {Clients.map(client)};
+        <>
+            КЛІЄНТИ
+            {
+                    clients.map((client) => {
+                        return (
+                            {client} )
+                    })
+                    
+            }
+        </>
     )
-}
+} 
 
-export default Clients
+    
+
+
+export default Clients;

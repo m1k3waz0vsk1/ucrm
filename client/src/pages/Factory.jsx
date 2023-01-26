@@ -6,4 +6,4 @@ export const Factory = () => {
     )
 }
 
-export default Factory
+export default Factory;
