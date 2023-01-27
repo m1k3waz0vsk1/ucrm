@@ -22,7 +22,7 @@ export const Clients = () => {
 
     const allClients = clients.map(client => {
         return (
-            <div className={client.id}>{client.name}</div>
+            {client.name, client.phone, client.email}
         )
     });
 
