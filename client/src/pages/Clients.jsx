@@ -9,7 +9,7 @@ export const Clients = () => {
 
     const fetchData = async ()=>{
         try {
-            const response = await axios.get("/clients");
+            const response = await axios.get("/clients");;
             setClients(response.data);
         } catch(e) {
             console.error(e);
@@ -20,16 +20,34 @@ export const Clients = () => {
         fetchData();
     }, [setClients]);
 
+    const allClients = clients.map(client => {
+        return (
+            <div className={client.id}>{client.name}</div>
+        )
+    });
+
+    const columns = [
+        {
+            name: "Назва",
+            selector: row => row.name,
+        },
+        {
+            name: "Телефон",
+            selector: row => row.phone,
+        },
+        {
+            name: "Електронна пошта",
+            selector: row => row.email,
+        },
+    ];
+
+
     return (
         <>
-            КЛІЄНТИ
-            {
-                    clients.map((client) => {
-                        return (
-                            {client} )
-                    })
-                    
-            }
+            <DataTable
+                columns={columns}
+                data={allClients}
+            />
         </>
     )
 } 
