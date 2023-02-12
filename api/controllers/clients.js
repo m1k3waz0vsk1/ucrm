@@ -2,7 +2,7 @@ import {db} from "../db.js"
 
 
 export const getClients = (req, res) => {
-    const q = "SELECT * FROM clients";
+    const q = "SELECT * FROM clients FOR JSON AUTO";
 
     db.query(q, [], (err, data) => {
         if (err) return res.send(err);
